@@ -42,6 +42,11 @@ ORDER BY s.[siteLabel]
 
 Use: 
 
-Extract somewhere where you can access all your controllers IPs, double click on trend_web_bot.py. You will need to select sites (from the cotroller list at setup) and properties to be extracted each time you run the software. By default, Scan/Replace will scan only. If you open the Replace interface and check "Replace", then you will also be replacing info. The interface should be self explanatory if you get there. Your results will be in an excel sheet "scan_result_datetime.xls" in the same folder. IF you get any error, make sure you filled in "OS_full_list" and "OS_logins", kept their original name and kept them in their original location (main folder).
+Extract somewhere where you can access all your controllers IPs, double click on trend_web_bot.exe. You will need to select sites (from the cotroller list at setup) and properties to be extracted each time you run the software. By default, Scan/Replace will scan only. If you open the Replace interface and check "Replace", then you will also be replacing info. The interface should be self explanatory if you get there. Your results will be in an excel sheet "scan_result_datetime.xls" in the same folder. IF you get any error, make sure you filled in "OS_full_list" and "OS_logins", kept their original name and kept them in their original location (main folder).
 
 ***THIS WILL NOT WORK WITHOUT SETING UP THE OS_full_list EXCEL SHEET***
+
+
+***************SOURCE**************
+
+The source code has been included as "trend_web_bot.py" for anyone to review or continue.
