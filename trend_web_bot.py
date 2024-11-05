@@ -35,7 +35,7 @@ SHEET_NAME = 'Trend_OS_full_list'
 OUTPUT = 'scan_results_'+str(datetime.datetime.now()).split('.')[0].replace(' ','').replace(':','').replace('-','')+'.xlsx'
 LOGIN_FILE = 'OS_logins.xlsx'
 PARAMETER_TABLE_LIST = {'id':'parameterTable', 'name':'Adjust'}
-LOADTIME = 1.8  #used for wait time before scanning/testing page
+LOADTIME = 1.8 #used for wait time before scanning/testing page
 LOGFILE = "trend_web_bot.log"
 ERRORLOG = "error.log"
 
@@ -550,7 +550,7 @@ class scraper:
     def open_link_same_tab(self,by,value):
             log.login(f"open_link_same_tab fct")
             try:
-                page_link = self.wait.until(EC.element_to_be_clickable((by, f"//a[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{value.lower()}')]")))
+                page_link = self.wait.until(EC.element_to_be_clickable((by, f"//a[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='{value.lower()}']")))
                 self.driver.execute_script("arguments[0].setAttribute('target', '_self');",page_link)
                 page_link.click()
                 log.login(f"open_link_same_tab fct completed")
@@ -953,6 +953,7 @@ with logger(LOGFILE) as log, logger(ERRORLOG) as error:
         log.login(f"error getting IPs: {e}")
 
     #init mode
+    global Replace
     Replace = False
     fetch_users()
 
